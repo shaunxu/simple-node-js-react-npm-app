@@ -10,7 +10,9 @@ pipeline {
     }
     stages {
         stage('onespl start') {
-            sh 'onespl start'
+            steps {
+                sh 'onespl start'
+            }
         }
         stage('Build') { 
             steps {
@@ -30,7 +32,9 @@ pipeline {
             }
         }
         stage('onespl artifact') {
-            sh 'onespl artifact http://10.211.55.14:8080/job/simple-node-js-react-npm-app/'
+            steps {
+                sh 'onespl artifact http://10.211.55.14:8080/job/simple-node-js-react-npm-app/'
+            }
         }
     }
 }
